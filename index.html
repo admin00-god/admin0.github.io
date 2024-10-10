@@ -4,137 +4,184 @@
     <title>A simple HTML document</title>
     <style>
       body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  text-align: center; /* add this to center the content */
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-button {
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #3e8e41;
-}
-
-#myParagraph:hover {
-  background-color: orange;
-}
-
-.center {
-  display: inline-block;
-  text-align: left; /* reset text alignment to left */
-  margin: 20px auto; /* add some margin and center horizontally */
-}
-
-table {
-  border-collapse: collapse;
-  width: 50%;
-  margin: 20px auto;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
-}
-
-.image-container {
-  display: inline-block;
-  margin: 20px;
-}
-
-.image {
-  width: 200px;
-  height: 200px;
-  border: 1px solid #ddd;
-  cursor: zoom-in;
-}
-
-.image:hover {
-  transform: scale(1.2);
-}
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        text-align: center; /* add this to center the content */
+      }
+      
+      h2 {
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      
+      button {
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 10px;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #3e8e41;
+      }
+      
+      #myParagraph:hover {
+        background-color: orange;
+      }
+      
+      /* add this to center the form and output */
+      .center {
+        display: inline-block;
+        text-align: left; /* reset text alignment to left */
+        margin: 20px auto; /* add some margin and center horizontally */
+      }
+      
+      /* add this to style the table */
+      table {
+        border-collapse: collapse;
+        width: 50%;
+        margin: 20px auto;
+      }
+      
+      th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+      
+      /* add styles for images */
+      .image-container {
+        display: inline-block;
+        margin: 20px;
+      }
+      
+      .image {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #ddd;
+        cursor: zoom-in;
+      }
+      
+      .image:hover {
+        transform: scale(1.2);
+      }
     </style>
 </head>
 <body>
-   <h2 id="heading">Welcome to My Page!</h2>
-<button onclick="changeTextColor()">Neon Light</button>
-<p id="myParagraph">This is a paragraph of text.</p>
-
-<div class="center"> <!-- wrap the form and output in a div with the center class -->
-  <form>
-    <label for="firstName">First Name:</label>
-    <input type="text" id="firstName" oninput="updateValues()"><br><br>
+    <h2 id="heading">Welcome to My Page!</h2>
+    <button onclick="changeTextColor()">Neon Light</button>
+    <p id="myParagraph">This is a paragraph of text.</p>
     
-    <label for="lastName">Last Name:</label>
-    <input type="text" id="lastName" oninput="updateValues()"><br><br>
-    
-    <label for="section">Section:</label>
-    <input type="text" id="section" oninput="updateValues()"><br><br>
-    
-    <p id="output"></p>
-  </form>
-  
-  <button onclick="addTableRow()">Add Row</button>
-  
-  <table id="myTable">
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Section</th>
-    </tr>
-  </table>
-  
-  <select id="mySelect">
-    <option value="Item 1">Item 1</option>
-    <option value="Item 2">Item 2</option>
-    <option value="Item 3">Item 3</option>
-  </select>
-  
-  <div class="image-container">
-    <img src="image.jpg" alt="An image" class="image">
-  </div>
-  
-  <script>
-    function changeTextColor() {
-      document.getElementById("heading").style.color = "green";
-    }
-    
-    function updateValues() {
-      var firstName = document.getElementById("firstName").value;
-      var lastName = document.getElementById("lastName").value;
-      var section = document.getElementById("section").value;
+    <div class="center"> <!-- wrap the form and output in a div with the center class -->
+      <form>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" oninput="updateValues()"><br><br>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" oninput="updateValues()"><br><br>
+        
+        <label for="section">Section:</label>
+        <input type="text" id="section" oninput="updateValues()"><br><br>
+        
+        <p id="output"></p>
+      </form>
       
-      document.getElementById("output").innerHTML = "First Name: " + firstName + "<br>Last Name: " + lastName + "<br>Section: " + section;
-    }
-    
-    function addTableRow() {
-      var table = document.getElementById("myTable");
-      var row = table.insertRow();
-      var cell1 = row.insertCell();
-      var cell2 = row.insertCell();
-      var cell3 = row.insertCell();
+      <button onclick="addTableRow()">Add Row</button>
       
-      cell1.innerHTML = document.getElementById("firstName").value;
-      cell2.innerHTML = document.getElementById("lastName").value;
-      cell3.innerHTML = document.getElementById("section").value;
-    }
-  </script>
+      <table id="myTable">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Section</th>
+        </tr>
+      </table>
+      
+      <select id="mySelect">
+        <option value="Item 1">Item 1</option>
+        <option value="Item 2">Item 2</option>
+        <option value="Item 3">Item 3</option>
+        <option value="Item 4">Item 4</option>
+        <option value="Item 5">Item 5</option>
+      </select>
+      
+      <button onclick="removeSelectedItem()">Remove Selected Item</button>
+      
+      <!-- add image containers -->
+      <div class="image-container">
+        <img src="image1.jpg" class="image" id="image1" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+      </div>
+      
+      <div class="image-container">
+        <img src="image2.jpg" class="image" id="image2" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+      </div>
+      
+      <button onclick="changeBackgroundColor()">Change Background Color</button>
+    </div>
+    
+    <script>
+      function changeTextColor() {
+        var heading = document.getElementById("heading");
+        if (heading.style.color === "blue") {
+          heading.style.color = "#333";
+        } else {
+          heading.style.color = "blue";
+        }
+      }
+      
+      function updateValues() {
+        var firstName = document.getElementById("firstName").value.toUpperCase();
+        var lastName = document.getElementById("lastName").value.toUpperCase();
+        var section = document.getElementById("section").value.toUpperCase();
+        
+        document.getElementById("output").innerHTML = "First Name: " + firstName + "<br>Last Name: " + lastName + "<br>Section: " + section;
+      }
+      
+      function addTableRow() {
+        var table = document.getElementById("myTable");
+        var row = table.insertRow();
+        var cell1 = row.insertCell();
+        var cell2 = row.insertCell();
+        var cell3 = row.insertCell();
+        
+        cell1.innerHTML = document.getElementById("firstName").value.toUpperCase();
+        cell2.innerHTML = document.getElementById("lastName").value.toUpperCase();
+        cell3.innerHTML = document.getElementById("section").value.toUpperCase();
+      }
+      
+      function removeSelectedItem() {
+        var select = document.getElementById("mySelect");
+        select.removeChild(select.options[select.selectedIndex]);
+      }
+      
+      function zoomIn(image) {
+        image.style.transform = "scale(1.2)";
+      }
+      
+      function zoomOut(image) {
+        image.style.transform = "scale(1)";
+      }
+      
+      function changeBackgroundColor() {
+        var randomColor = getRandomColor();
+        document.body.style.background = randomColor;
+      }
+      
+      function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+    </script>
 </body>
 </html>
