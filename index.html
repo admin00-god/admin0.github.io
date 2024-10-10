@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>SBIT-1E</title>
+    <title>A simple HTML document</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -43,12 +43,25 @@
         text-align: left; /* reset text alignment to left */
         margin: 20px auto; /* add some margin and center horizontally */
       }
+      
+      /* add this to style the table */
+      table {
+        border-collapse: collapse;
+        width: 50%;
+        margin: 20px auto;
+      }
+      
+      th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
     </style>
 </head>
 <body>
-    <h2 id="heading">WELCOME YOU FILTHY ANIMALS</h2>
-    <button onclick="changeTextColor()">Change Color</button>
-    <p id="myParagraph">HOVER OVER ME</p>
+    <h2 id="heading">Welcome to My Page!</h2>
+    <button onclick="changeTextColor()">Neon Light</button>
+    <p id="myParagraph">This is a paragraph of text.</p>
     
     <div class="center"> <!-- wrap the form and output in a div with the center class -->
       <form>
@@ -63,6 +76,16 @@
         
         <p id="output"></p>
       </form>
+      
+      <button onclick="addTableRow()">Add Row</button>
+      
+      <table id="myTable">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Section</th>
+        </tr>
+      </table>
     </div>
     
     <script>
@@ -81,6 +104,18 @@
         var section = document.getElementById("section").value.toUpperCase();
         
         document.getElementById("output").innerHTML = "First Name: " + firstName + "<br>Last Name: " + lastName + "<br>Section: " + section;
+      }
+      
+      function addTableRow() {
+        var table = document.getElementById("myTable");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        
+        cell1.innerHTML = document.getElementById("firstName").value;
+        cell2.innerHTML = document.getElementById("lastName").value;
+        cell3.innerHTML = document.getElementById("section").value;
       }
     </script>
 </body>
