@@ -31,11 +31,29 @@
       button:hover {
         background-color: #3e8e41;
       }
+      
+      #myParagraph:hover {
+        background-color: orange;
+      }
     </style>
 </head>
 <body>
     <h2 id="heading">Welcome to My Page!</h2>
     <button onclick="changeTextColor()">Neon Light</button>
+    <p id="myParagraph">This is a paragraph of text.</p>
+    
+    <form>
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" oninput="updateValues()"><br><br>
+      
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" oninput="updateValues()"><br><br>
+      
+      <label for="section">Section:</label>
+      <input type="text" id="section" oninput="updateValues()"><br><br>
+      
+      <p id="output"></p>
+    </form>
     
     <script>
       function changeTextColor() {
@@ -45,6 +63,14 @@
         } else {
           heading.style.color = "blue";
         }
+      }
+      
+      function updateValues() {
+        var firstName = document.getElementById("firstName").value.toUpperCase();
+        var lastName = document.getElementById("lastName").value.toUpperCase();
+        var section = document.getElementById("section").value.toUpperCase();
+        
+        document.getElementById("output").innerHTML = "First Name: " + firstName + "<br>Last Name: " + lastName + "<br>Section: " + section;
       }
     </script>
 </body>
