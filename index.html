@@ -6,6 +6,7 @@
       body {
         font-family: Arial, sans-serif;
         background-color: #f5f5f5;
+        text-align: center; /* add this to center the content */
       }
       
       h2 {
@@ -35,6 +36,13 @@
       #myParagraph:hover {
         background-color: orange;
       }
+      
+      /* add this to center the form and output */
+      .center {
+        display: inline-block;
+        text-align: left; /* reset text alignment to left */
+        margin: 20px auto; /* add some margin and center horizontally */
+      }
     </style>
 </head>
 <body>
@@ -42,18 +50,20 @@
     <button onclick="changeTextColor()">Neon Light</button>
     <p id="myParagraph">This is a paragraph of text.</p>
     
-    <form>
-      <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" oninput="updateValues()"><br><br>
-      
-      <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" oninput="updateValues()"><br><br>
-      
-      <label for="section">Section:</label>
-      <input type="text" id="section" oninput="updateValues()"><br><br>
-      
-      <p id="output"></p>
-    </form>
+    <div class="center"> <!-- wrap the form and output in a div with the center class -->
+      <form>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" oninput="updateValues()"><br><br>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" oninput="updateValues()"><br><br>
+        
+        <label for="section">Section:</label>
+        <input type="text" id="section" oninput="updateValues()"><br><br>
+        
+        <p id="output"></p>
+      </form>
+    </div>
     
     <script>
       function changeTextColor() {
